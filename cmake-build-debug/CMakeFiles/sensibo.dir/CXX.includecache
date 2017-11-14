@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/maghe/CLionProjects/sensibo/httplib.h
+/home/maghe/git/sensibo/httplib.h
 fcntl.h
 -
 io.h
@@ -50,7 +50,7 @@ assert.h
 openssl/ssl.h
 -
 
-/home/maghe/CLionProjects/sensibo/json.hpp
+/home/maghe/git/sensibo/json.hpp
 algorithm
 -
 array
@@ -106,11 +106,11 @@ valarray
 vector
 -
 
-/home/maghe/CLionProjects/sensibo/main.cpp
+/home/maghe/git/sensibo/main.cpp
 httplib.h
-/home/maghe/CLionProjects/sensibo/httplib.h
+/home/maghe/git/sensibo/httplib.h
 json.hpp
-/home/maghe/CLionProjects/sensibo/json.hpp
+/home/maghe/git/sensibo/json.hpp
 iostream
 -
 

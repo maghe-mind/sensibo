@@ -48,10 +48,10 @@ RM = /home/maghe/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maghe/CLionProjects/sensibo
+CMAKE_SOURCE_DIR = /home/maghe/git/sensibo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maghe/CLionProjects/sensibo/cmake-build-debug
+CMAKE_BINARY_DIR = /home/maghe/git/sensibo/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maghe/CLionProjects/sensibo/cmake-build-debug/CMakeFiles /home/maghe/CLionProjects/sensibo/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maghe/git/sensibo/cmake-build-debug/CMakeFiles /home/maghe/git/sensibo/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maghe/CLionProjects/sensibo/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maghe/git/sensibo/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
