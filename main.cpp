@@ -23,27 +23,10 @@ int main() {
                   << std::endl;
     }
 
-
-
-
-
-
-
-
-
-/*
-
-
-
-    // auto responseStates = GetStates(podUid,apiKey);
-
-    //PrintResponse(responseStates);
-
-
- json j2 = {
+json j2 = {
             {"acState", {
                                 {"on", false},
-                                {"targetTemperature", 28},
+                                {"targetTemperature", 23},
                                 {"temperatureUnit", "C"},
                                 {"mode", "auto"},
                                 {"swing", "rangeFull"}
@@ -54,15 +37,9 @@ int main() {
 
 
 
-
-
-    for (const std::string &pod : pods) {
-        auto responsePost = sensiboManager.PostAcState(pod, apiKey, j2.dump(), contentType);
-        sensiboManager.PrintResponse(responsePost);
+    for (auto const &device : devices){
+        auto responsePost = sensiboManager.PostAcState(device.second.getPod(), j2.dump(), contentType);
     }
-
-*/
-
 
     return 0;
 }

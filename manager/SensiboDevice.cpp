@@ -14,14 +14,14 @@ std::string SensiboDevice::toString() const {
     return pod + "," + roomName + "," + rawdata;
 }
 
-std::string SensiboDevice::getPod() {
+std::string SensiboDevice::getPod() const{
     return pod;
 }
 
-std::string SensiboDevice::getRoomName() {
+std::string SensiboDevice::getRoomName() const{
     return roomName;
 }
 
-std::string SensiboDevice::getRawdata() {
+std::string SensiboDevice::getRawdata() const{
     return rawdata;
 }

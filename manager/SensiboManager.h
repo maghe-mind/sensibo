@@ -25,8 +25,7 @@ public:
 
     std::string GetField(std::string pod, std::string fieldName);
 
-    std::shared_ptr<httplib::Response>
-    PostAcState(std::string uid, std::string apiKey, std::basic_string<char> message, std::string contentType);
+   bool PostAcState(std::string uid, std::basic_string<char> message, std::string contentType);
 
 
 /*
