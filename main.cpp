@@ -23,7 +23,12 @@ int main() {
     SensiboManager sensiboManager(host, port);
     auto devices = sensiboManager.GetDevicesInfo(apiKey);
 
-
+    for (auto const &device : devices) {
+        std::cout << device.first  // string (key)
+                  << ':'
+                  << device.second.toString() // string's value
+                  << std::endl;
+    }
 
 
 

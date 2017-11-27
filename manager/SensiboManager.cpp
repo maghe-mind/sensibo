@@ -32,9 +32,9 @@ std::map<std::string, SensiboDevice> SensiboManager::GetDevicesInfo(std::string 
 
         std::string roomName = json::parse(room)["room"]["name"];
 
-        std::string rawdata = SensiboManager::GetRawData(pod,apiKey);
+        std::string rawdata = SensiboManager::GetRawData(pod, apiKey);
 
-        SensiboDevice sensiboDevice(pod, room, rawdata);
+        SensiboDevice sensiboDevice(pod, roomName, rawdata);
 
         sensiboDevices.insert(std::pair<std::string, SensiboDevice>(pod, sensiboDevice));
     }
@@ -66,7 +66,6 @@ std::string SensiboManager::GetField(std::string pod, std::string apiKey, std::s
     std::string path = "/api/v2/pods/" + pod
                        + "?apiKey=" + apiKey
                        + "&fields=" + fieldName;
-    std::cout << path.c_str() << std::endl;
     std::shared_ptr<httplib::Response> response = cli.get(path.c_str());
 
     if (response && response->status == 200) {
@@ -82,7 +81,6 @@ std::string SensiboManager::GetField(std::string pod, std::string apiKey, std::s
 }
 
 std::string SensiboManager::GetRawData(std::string pod, std::string apiKey) {
-
     return SensiboManager::GetField(pod, apiKey, "");
 }
 
