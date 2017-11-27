@@ -15,6 +15,10 @@ public:
     SensiboDevice(std::string pod, std::string roomName,std::string rawdata);
     std::string toString() const;
 
+    std::string getPod();
+    std::string getRoomName();
+    std::string getRawdata();
+
 private:
     std::string pod;
     std::string roomName;

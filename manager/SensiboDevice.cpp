@@ -10,6 +10,18 @@ SensiboDevice::SensiboDevice(std::string pod, std::string roomName, std::string 
     this->rawdata = rawdata;
 }
 
-std::string SensiboDevice::toString() const{
+std::string SensiboDevice::toString() const {
     return pod + "," + roomName + "," + rawdata;
+}
+
+std::string SensiboDevice::getPod() {
+    return pod;
+}
+
+std::string SensiboDevice::getRoomName() {
+    return roomName;
+}
+
+std::string SensiboDevice::getRawdata() {
+    return rawdata;
 }
