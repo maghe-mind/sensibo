@@ -3,7 +3,7 @@ project(sensibo)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp manager/SensiboManager.cpp manager/SensiboManager.h  define.h define.h.h manager/SensiboDevice.cpp manager/SensiboDevice.h)
+set(SOURCE_FILES main.cpp manager/SensiboManager.cpp manager/SensiboManager.h  define.h define.h manager/SensiboDevice.cpp manager/SensiboDevice.h)
 add_executable(sensibo ${SOURCE_FILES})
 
 find_package(OpenSSL)

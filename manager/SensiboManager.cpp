@@ -9,6 +9,7 @@
 #include <iostream>
 #include <memory>
 #include "SensiboManager.h"
+#include "../define.h"
 #include "SensiboDevice.h"
 #include "map"
 
@@ -21,18 +22,18 @@ SensiboManager::SensiboManager(std::string host, int port) :
 
 }
 
-std::map<std::string, SensiboDevice> SensiboManager::GetDevicesInfo(std::string apiKey) {
+std::map<std::string, SensiboDevice> SensiboManager::GetDevicesInfo() {
 
     std::map<std::string, SensiboDevice> sensiboDevices;
-    auto pods = SensiboManager::GetPods(apiKey);
+    auto pods = SensiboManager::GetPods();
 
     for (const std::string &pod : pods) {
 
-        std::string room = SensiboManager::GetField(pod, apiKey, "room");
+        std::string room = SensiboManager::GetField(pod, "room");
 
         std::string roomName = json::parse(room)["room"]["name"];
 
-        std::string rawdata = SensiboManager::GetRawData(pod, apiKey);
+        std::string rawdata = SensiboManager::GetRawData(pod);
 
         SensiboDevice sensiboDevice(pod, roomName, rawdata);
 
@@ -42,9 +43,10 @@ std::map<std::string, SensiboDevice> SensiboManager::GetDevicesInfo(std::string 
 }
 
 
-std::vector<std::string> SensiboManager::GetPods(std::string apiKey) {
+std::vector<std::string> SensiboManager::GetPods() {
 
     std::vector<std::string> pods;
+    std::string apiKey(SENSIBO_APIKEY); //TODO: I don't understand why operator + cannot be applied to char[], while in the method GetField this operator accepts it.
     std::string path = "/api/v2/users/me/pods?apiKey=" + apiKey;
     std::shared_ptr<httplib::Response> response = cli.get(path.c_str());
 
@@ -60,11 +62,11 @@ std::vector<std::string> SensiboManager::GetPods(std::string apiKey) {
     return pods;
 }
 
-std::string SensiboManager::GetField(std::string pod, std::string apiKey, std::string fieldName) {
+std::string SensiboManager::GetField(std::string pod, std::string fieldName) {
 
     std::string responseResult;
     std::string path = "/api/v2/pods/" + pod
-                       + "?apiKey=" + apiKey
+                       + "?apiKey=" + SENSIBO_APIKEY
                        + "&fields=" + fieldName;
     std::shared_ptr<httplib::Response> response = cli.get(path.c_str());
 
@@ -80,8 +82,8 @@ std::string SensiboManager::GetField(std::string pod, std::string apiKey, std::s
     return responseResult;
 }
 
-std::string SensiboManager::GetRawData(std::string pod, std::string apiKey) {
-    return SensiboManager::GetField(pod, apiKey, "");
+std::string SensiboManager::GetRawData(std::string pod) {
+    return SensiboManager::GetField(pod, "");
 }
 
 std::shared_ptr<httplib::Response>

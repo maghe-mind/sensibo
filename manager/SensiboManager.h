@@ -19,11 +19,11 @@ class SensiboManager {
 public:
     SensiboManager(std::string host, int port);
 
-    std::vector<std::string> GetPods(std::string apiKey);
+    std::vector<std::string> GetPods();
 
-    std::map<std::string, SensiboDevice> GetDevicesInfo(std::string basic_string);
+    std::map<std::string, SensiboDevice> GetDevicesInfo();
 
-    std::string GetField(std::string pod, std::string apiKey, std::string fieldName);
+    std::string GetField(std::string pod, std::string fieldName);
 
     std::shared_ptr<httplib::Response>
     PostAcState(std::string uid, std::string apiKey, std::basic_string<char> message, std::string contentType);
@@ -39,7 +39,7 @@ private:
     httplib::SSLClient cli;
 
 
-    std::string GetRawData(std::string pod,std::string apiKey);
+    std::string GetRawData(std::string pod);
 };
 
 

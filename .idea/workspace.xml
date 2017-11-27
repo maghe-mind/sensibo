@@ -12,8 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7b41879-e7c3-4ab6-8932-cb5da8daf692" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/SensiboDevice.cpp" afterPath="$PROJECT_DIR$/manager/SensiboDevice.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/SensiboDevice.h" afterPath="$PROJECT_DIR$/manager/SensiboDevice.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/define.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/define.h.h" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/SensiboManager.cpp" afterPath="$PROJECT_DIR$/manager/SensiboManager.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/SensiboManager.h" afterPath="$PROJECT_DIR$/manager/SensiboManager.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -26,13 +30,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#37#61#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="define.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/define.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensiboManager.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manager/SensiboManager.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+              <folding>
+                <element signature="e#173#200#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,45 +67,12 @@
       <file leaf-file-name="SensiboManager.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager/SensiboManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="62" column="97" lean-forward="false" selection-start-line="62" selection-start-column="97" selection-end-line="62" selection-end-column="97" />
+            <state relative-caret-position="-166">
+              <caret line="49" column="63" lean-forward="false" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
               <folding>
                 <element signature="e#76#103#0" expanded="true" />
-                <element signature="e#1035#1779#0" expanded="false" />
-                <element signature="e#1781#2600#0" expanded="false" />
-                <element signature="e#2602#2735#0" expanded="false" />
-                <element signature="e#2737#3118#0" expanded="false" />
+                <element signature="e#2828#3209#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensiboDevice.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/SensiboDevice.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensiboManager.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manager/SensiboManager.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensiboDevice.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/SensiboDevice.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -93,7 +86,11 @@
       <find>cli</find>
       <find>j3</find>
       <find>x</find>
+      <find>apiKey</find>
     </findStrings>
+    <replaceStrings>
+      <replace>SENSIBO_APIKEY</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,11 +101,13 @@
         <option value="$PROJECT_DIR$/SensiboManager.cpp" />
         <option value="$PROJECT_DIR$/SensiboManager.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/manager/SensiboManager.cpp" />
         <option value="$PROJECT_DIR$/manager/SensiboDevice.h" />
         <option value="$PROJECT_DIR$/manager/SensiboDevice.cpp" />
+        <option value="$PROJECT_DIR$/define.h.h" />
+        <option value="$PROJECT_DIR$/define.h" />
         <option value="$PROJECT_DIR$/manager/SensiboManager.h" />
+        <option value="$PROJECT_DIR$/manager/SensiboManager.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -143,11 +142,6 @@
             <path>
               <item name="sensibo" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="sensibo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sensibo" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="sensibo" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sensibo" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -212,12 +206,12 @@
       <workItem from="1510762252194" duration="14000" />
       <workItem from="1510819939919" duration="914000" />
       <workItem from="1511523058990" duration="13361000" />
-      <workItem from="1511770708416" duration="4984000" />
+      <workItem from="1511770708416" duration="6392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37725000" />
+    <option name="totallyTimeSpent" value="39133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1050" extended-state="6" />
@@ -252,7 +246,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/manager/SensiboManager.cpp</url>
+          <line>26</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -275,7 +276,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/define.h.h">
+    <entry file="file://$PROJECT_DIR$/define.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -303,7 +304,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="63" lean-forward="false" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="63" />
-          <folding />
+          <folding>
+            <element signature="e#173#200#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -313,10 +316,7 @@
           <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding>
             <element signature="e#76#103#0" expanded="true" />
-            <element signature="e#1035#1779#0" expanded="false" />
-            <element signature="e#1781#2600#0" expanded="false" />
-            <element signature="e#2602#2735#0" expanded="false" />
-            <element signature="e#2737#3118#0" expanded="false" />
+            <element signature="e#2828#3209#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -415,40 +415,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/define.h.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/json.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="1131" column="0" lean-forward="false" selection-start-line="1131" selection-start-column="0" selection-end-line="1131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/SensiboManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="62" column="97" lean-forward="false" selection-start-line="62" selection-start-column="97" selection-end-line="62" selection-end-column="97" />
-          <folding>
-            <element signature="e#76#103#0" expanded="true" />
-            <element signature="e#1035#1779#0" expanded="false" />
-            <element signature="e#1781#2600#0" expanded="false" />
-            <element signature="e#2602#2735#0" expanded="false" />
-            <element signature="e#2737#3118#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/SensiboDevice.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -461,21 +431,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/manager/SensiboDevice.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="43" />
-          <folding>
-            <element signature="e#37#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manager/SensiboManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <element signature="e#173#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/define.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/SensiboManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-166">
+          <caret line="49" column="63" lean-forward="false" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
+          <folding>
+            <element signature="e#76#103#0" expanded="true" />
+            <element signature="e#2828#3209#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#37#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

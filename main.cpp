@@ -6,22 +6,15 @@
 #include <iostream>
 #include <memory>
 #include "manager/SensiboManager.h"
+#include "define.h"
 
 
 using json = nlohmann::json;
 
-
-std::string host = "home.sensibo.com"; //TODO: static and final??
-int port = 443;//TODO: static and final??
-
-
-std::string apiKey = "FdNABENzMCuRt7niVUgSm8oxVvXi85"; //TODO: static and final??
-
-
 int main() {
 
-    SensiboManager sensiboManager(host, port);
-    auto devices = sensiboManager.GetDevicesInfo(apiKey);
+    SensiboManager sensiboManager(SENSIBO_HOST, SENSIBO_PORT);
+    auto devices = sensiboManager.GetDevicesInfo();
 
     for (auto const &device : devices) {
         std::cout << device.first  // string (key)
