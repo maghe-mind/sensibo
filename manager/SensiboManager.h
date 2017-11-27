@@ -11,6 +11,7 @@
 #include "../lib/json.hpp"
 #include <iostream>
 #include <memory>
+#include "SensiboDevice.h"
 
 
 class SensiboManager {
@@ -18,15 +19,27 @@ class SensiboManager {
 public:
     SensiboManager(std::string host, int port);
 
-    void PrintResponse(std::shared_ptr<httplib::Response> states);
+    std::vector<std::string> GetPods(std::string apiKey);
 
-    std::shared_ptr<httplib::Response> GetStates(std::string uid, std::string apiKey);
+    std::map<std::string, SensiboDevice> GetDevicesInfo(std::string basic_string);
+
+    std::string GetField(std::string pod, std::string apiKey, std::string fieldName);
 
     std::shared_ptr<httplib::Response>
     PostAcState(std::string uid, std::string apiKey, std::basic_string<char> message, std::string contentType);
 
+
+/*
+    void PrintResponse(std::shared_ptr<httplib::Response> states);
+
+    std::shared_ptr<httplib::Response> GetStates(std::string uid, std::string apiKey);
+*/
+
 private:
     httplib::SSLClient cli;
+
+
+    std::string GetRawData(std::string pod,std::string apiKey);
 };
 
 
