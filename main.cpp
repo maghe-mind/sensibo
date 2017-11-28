@@ -14,6 +14,7 @@ using json = nlohmann::json;
 int main() {
 
     SensiboManager sensiboManager(SENSIBO_HOST, SENSIBO_PORT);
+
     auto devices = sensiboManager.GetDevicesInfo();
 
     for (auto const &device : devices) {
@@ -23,7 +24,9 @@ int main() {
                   << std::endl;
     }
 
-json j2 = {
+
+    /*
+     json j2 = {
             {"acState", {
                                 {"on", false},
                                 {"targetTemperature", 23},
@@ -36,11 +39,10 @@ json j2 = {
     std::string contentType = "application/json";
 
 
-
-    for (auto const &device : devices){
+    for (auto const &device : devices) {
         auto responsePost = sensiboManager.PostAcState(device.second.getPod(), j2.dump(), contentType);
     }
-
+    */
     return 0;
 }
 

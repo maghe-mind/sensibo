@@ -9,9 +9,10 @@
 
 #include "../lib/httplib.h"
 #include "../lib/json.hpp"
+#include "SensiboAcState.h"
+#include "SensiboDevice.h"
 #include <iostream>
 #include <memory>
-#include "SensiboDevice.h"
 
 
 class SensiboManager {
@@ -19,26 +20,26 @@ class SensiboManager {
 public:
     SensiboManager(std::string host, int port);
 
-    std::vector<std::string> GetPods();
+    SensiboDevice GetDeviceInfo(std::string pod);
 
     std::map<std::string, SensiboDevice> GetDevicesInfo();
 
-    std::string GetField(std::string pod, std::string fieldName);
+    bool PostAcState(std::string uid, std::basic_string<char> message, std::string contentType);
 
-   bool PostAcState(std::string uid, std::basic_string<char> message, std::string contentType);
-
-
-/*
+    /*
     void PrintResponse(std::shared_ptr<httplib::Response> states);
-
-    std::shared_ptr<httplib::Response> GetStates(std::string uid, std::string apiKey);
-*/
+    */
 
 private:
     httplib::SSLClient cli;
 
+    SensiboAcState GetCurrentAcState(std::string pod);
+
+    std::string GetField(std::string pod, std::string fieldName);
 
     std::string GetRawData(std::string pod);
+
+    std::vector<std::string> GetPods();
 };
 
 

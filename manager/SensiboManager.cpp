@@ -10,9 +10,8 @@
 #include <memory>
 #include "SensiboManager.h"
 #include "../define.h"
+#include "SensiboAcState.h"
 #include "SensiboDevice.h"
-#include "map"
-
 
 using json = nlohmann::json;
 
@@ -22,26 +21,59 @@ SensiboManager::SensiboManager(std::string host, int port) :
 
 }
 
+
+SensiboDevice SensiboManager::GetDeviceInfo(std::string pod) {
+
+    std::string room = SensiboManager::GetField(pod, "room");
+    std::string roomName = json::parse(room)["room"]["name"];
+    std::string rawdata = SensiboManager::GetRawData(pod);
+    SensiboAcState sensiboCurrentAcState = SensiboManager::GetCurrentAcState(pod);
+
+    SensiboDevice sensiboDevice(pod, roomName, rawdata, sensiboCurrentAcState);
+
+    return sensiboDevice;
+}
+
+
+SensiboAcState SensiboManager::GetCurrentAcState(std::string pod) {
+
+    SensiboAcState acCurrentState;
+    //https://home.sensibo.com/api/v2/pods/kvDso2fP/acStates?apiKey=FdNABENzMCuRt7niVUgSm8oxVvXi85
+    std::string path = "/api/v2/pods/" + pod + "/acStates?apiKey=" + SENSIBO_APIKEY;
+    std::shared_ptr<httplib::Response> response = cli.get(path.c_str());
+
+    if (response && response->status == 200) {
+        auto parsedJsonResponse = json::parse(response->body);  //TODO: parse explicitly. Something more elegant?
+
+        std::string id = parsedJsonResponse["result"][0]["id"];
+        bool on = parsedJsonResponse["result"][0]["acState"]["on"];
+        std::string fanLevel = parsedJsonResponse["result"][0]["acState"]["fanLevel"];
+        std::string temperatureUnit = parsedJsonResponse["result"][0]["acState"]["temperatureUnit"];
+        int targetTemperature = parsedJsonResponse["result"][0]["acState"]["targetTemperature"];
+        std::string mode = parsedJsonResponse["result"][0]["acState"]["mode"];
+        std::string swing = parsedJsonResponse["result"][0]["acState"]["swing"];
+
+        acCurrentState = SensiboAcState(id, on, fanLevel, temperatureUnit, targetTemperature, mode, swing);
+
+    } else {
+        std::cout << "No response or respose code != 200" << std::endl;
+        throw std::exception(); // TODO: discuss how to manage the misbehavior
+    }
+
+    return acCurrentState;
+}
+
+
 std::map<std::string, SensiboDevice> SensiboManager::GetDevicesInfo() {
 
     std::map<std::string, SensiboDevice> sensiboDevices;
     auto pods = SensiboManager::GetPods();
-
     for (const std::string &pod : pods) {
-
-        std::string room = SensiboManager::GetField(pod, "room");
-
-        std::string roomName = json::parse(room)["room"]["name"];
-
-        std::string rawdata = SensiboManager::GetRawData(pod);
-
-        SensiboDevice sensiboDevice(pod, roomName, rawdata);
-
+        auto sensiboDevice = SensiboManager::GetDeviceInfo(pod);
         sensiboDevices.insert(std::pair<std::string, SensiboDevice>(pod, sensiboDevice));
     }
     return sensiboDevices;
 }
-
 
 std::vector<std::string> SensiboManager::GetPods() {
 
@@ -89,9 +121,8 @@ std::string SensiboManager::GetRawData(std::string pod) {
 
 bool SensiboManager::PostAcState(std::string uid, std::basic_string<char> message, std::string contentType) {
 
-
     std::string path = "/api/v2/pods/" + uid + "/acStates?apiKey=" + SENSIBO_APIKEY;
-    std::shared_ptr<httplib::Response> response = cli.post(path.c_str(), message, contentType.c_str());
+    std::shared_ptr<httplib::Response> response = cli.get(path.c_str());
 
     if (response && response->status == 200) {
         std::cout << "PostAcState response" << std::endl;
