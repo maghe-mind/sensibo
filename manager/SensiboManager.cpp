@@ -122,7 +122,7 @@ std::string SensiboManager::GetRawData(std::string pod) {
 bool SensiboManager::PostAcState(std::string uid, std::basic_string<char> message, std::string contentType) {
 
     std::string path = "/api/v2/pods/" + uid + "/acStates?apiKey=" + SENSIBO_APIKEY;
-    std::shared_ptr<httplib::Response> response = cli.get(path.c_str());
+    std::shared_ptr<httplib::Response> response = cli.post(path.c_str(), message, contentType.c_str());
 
     if (response && response->status == 200) {
         std::cout << "PostAcState response" << std::endl;
